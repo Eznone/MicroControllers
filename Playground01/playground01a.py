@@ -85,7 +85,7 @@ def main():
         led4.off()
         led5.off()
     
-    botao2.when_pressed = 
+    botao2.when_pressed = off4and5
     
     # Para terminar esta primeira parte do Playground, vamos para o display LCD.
     # A inicialização dele pede os seis pinos, o número de colunas e o número de linhas.
@@ -109,15 +109,19 @@ def main():
     
     # CHAME A FUNÇÃO lcd.clear() PARA APAGAR O TEXTO INICIAL.
     # EM SEGUIDA, ESCREVA O SEU NOME NA LINHA DE CIMA E O SOBRENOME NA LINHA DE BAIXO.
-    
+    lcd.clear()
+    lcd.message("Ronald\nMcDonald")    
     
     
     
     # CRIE OUTROS COMPORTAMENTOS PARA OS DISPOSITIVOS! BRINQUE À VONTADE!
     # Sugestão 1: faça com que o botão 3 pisque 2 vezes os LEDs 4 e 5.
     # Sugestão 2: use o while True abaixo para ir aumentando um contador e mostrá-lo no LCD.
-
-
+    def blink4and5():
+        led4.blink(n=2)
+        led5.blink(n=2)
+    
+    botao3.when_pressed = blink4and5
     
     
     # Este while True garante que o nosso código vai continuar rodando direto.
